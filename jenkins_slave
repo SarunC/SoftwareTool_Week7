@@ -5,7 +5,7 @@ pipeline {
         string(name: 'Ages', defaultValue: '20', description: 'Enter your age')
     }
     stages {
-        stage('Greeting') {
+        stage('Greet') {
             steps {
                 echo "Hello from Slave ${params.NAME}\nYou are ${params.Ages} years old"
                 
