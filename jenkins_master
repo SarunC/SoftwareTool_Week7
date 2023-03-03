@@ -14,7 +14,7 @@ pipeline {
                 script {
                     def data = readFile(file: 'data.json')
                     echo 'Start Trigger to send name and age to slave'
-                    build job: 'slave', parameters: [string(name: 'NAME', "Test"), string(name: 'Ages', "21")]
+                    build job: 'slave', parameters: [string(name: 'NAME', value:"Test"), string(name: 'Ages', value:"21")]
                 }
             }
         }
