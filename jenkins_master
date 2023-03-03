@@ -12,7 +12,7 @@ pipeline {
         stage('Trigger the Slave Jobs') {
             steps {
                 script {
-                    echo 'Start Trigger to send name and age to slave.'
+                    echo 'Start Trigger to send name and age to slave'
                     releasePackages = readJSON file: "${env.WORKSPACE}/data.json"
                     build job: 'slave', parameters: [string(name: 'NAME', value:"$releasePackages.NAME"), string(name: 'AGE', value:"$releasePackages.AGE")]
                 }
